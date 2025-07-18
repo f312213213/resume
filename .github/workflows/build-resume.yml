@@ -1,0 +1,71 @@
+name: Build and Update Resume
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - '*.tex'
+      - '.github/workflows/build-resume.yml'
+  workflow_dispatch:
+
+jobs:
+  build-latex:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Build Docker image
+      run: docker build -t latex .
+    
+    - name: Compile LaTeX document
+      run: |
+        docker run --rm -i -v "$PWD":/data latex pdflatex david_chien_resume.tex
+        docker run --rm -i -v "$PWD":/data latex pdflatex david_chien_resume.tex  # Run twice for proper cross-references
+    
+    - name: Check if PDF was generated
+      run: |
+        if [ ! -f "david_chien_resume.pdf" ]; then
+          echo "Error: PDF was not generated"
+          exit 1
+        fi
+        echo "PDF generated successfully"
+        ls -la david_chien_resume.pdf
+    
+    - name: Configure Git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+    
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        if git diff --quiet HEAD -- david_chien_resume.pdf; then
+          echo "No changes to PDF"
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "PDF has changes"
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push PDF
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        git add david_chien_resume.pdf
+        git commit -m "🤖 Auto-update resume PDF
+
+        Generated from commit: ${{ github.sha }}
+        
+        🤖 Generated with GitHub Actions"
+        git push
+    
+    - name: Upload PDF as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: resume-pdf
+        path: david_chien_resume.pdf
+        retention-days: 30
