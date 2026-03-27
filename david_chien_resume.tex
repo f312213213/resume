@@ -95,13 +95,13 @@
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\href{https://chiendavid.com/}{\Large David Chien}} & Email: \href{mailto:f312213213david@gmail.com}{f312213213david@gmail.com}\\
   \href{https://chiendavid.com/}{chiendavid.com} & \href{https://linkedin.com/in/davidchien419}{linkedin.com/in/davidchien419}\\
-  Taipei, Taiwan; Seattle, USA & \href{https://github.com/f312213213}{github.com/f312213213}
+  Prague, Czech Republic & \href{https://github.com/f312213213}{github.com/f312213213}
 \end{tabular*}
 
 
 %-----------PROFESSIONAL SUMMARY-----------------
 \section{Professional Summary}
-Results-driven Software Engineer with a product-focused mindset and robust experience in frontend optimization, infrastructure modernization, and performance tuning for large-scale, React-based applications. Demonstrated expertise in build system migration, CI/CD acceleration, and cross-team collaboration. Adept at delivering measurable improvements in system performance, developer productivity, and user experience.
+Full-stack product engineer who ships end-to-end — from greenfield features to infrastructure overhauls. Experienced in React/Next.js frontends, Node.js backends, AI integrations (OpenAI, Claude, Gemini), and third-party services (Stripe, Wise, LogRocket, BetterStack). Track record of owning entire feature surfaces solo, modernizing build systems (83\% CI speedup), and decoupling services for independent scaling.
 
 
 %-----------EXPERIENCE-----------------
@@ -109,19 +109,27 @@ Results-driven Software Engineer with a product-focused mindset and robust exper
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Appier}{Taipei, Taiwan}
-      {Software Engineer}{July 2024 -- Present}
+      {Make}{Prague, Czech Republic}
+      {Software Engineer}{Feb 2026 -- Present}
       \resumeItemListStart
-        \resumeItem{Custom Billing Interface for Admin}
-          {Implemented a friendily UI along with backend logic intergated with Stripe API for admin to create custom billing plan for end customers}
+        \resumeItem{Pricing API Decoupling}
+          {Extracted a misused internal pricing API into a dedicated public endpoint with proper access control, unblocking independent deployment cycles}
+        \resumeItem{Wise Integration Refactor}
+          {Refactored Wise payment integration to harden data consistency across payment flows and eliminate reconciliation errors}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Appier}{Taipei, Taiwan}
+      {Software Engineer}{July 2024 -- Feb 2026}
+      \resumeItemListStart
+        \resumeItem{Campaign Segment Configuration}
+          {Solely owned a greenfield feature end-to-end (frontend + auth backend), unifying two products' segment controls into a single dashboard}
+        \resumeItem{Enterprise Billing Platform}
+          {Built a full-stack billing interface on Stripe API, replacing manual per-customer operations with a unified enterprise workflow}
         \resumeItem{Infrastructure Modernization}
-          {Modernized monorepo infrastructure by leading migration from Yarn/Lerna to pnpm/NX, reducing CI/CD pipeline execution time by 83\% (from 30 minutes to 5 minutes)}
-        \resumeItem{Logging Service}
-          {Designed and deployed a comprehensive logging service, enabling real-time performance monitoring, session replay, and accelerating issue resolution by 15\%}
-        \resumeItem{Cross-functional Collaboration}
-          {Collaborated with cross-functional teams to implement scalable solutions and drive continuous improvement in development workflows}
-        \resumeItem{Technical Leadership}
-          {Acted as a key decision-maker in selecting and implementing new build tools}
+          {Led migration from Yarn/Lerna to pnpm/NX, cutting CI/CD pipeline time by 83\% (30 min → 5 min)}
+        \resumeItem{Observability}
+          {Integrated LogRocket for session replay and performance monitoring, accelerating issue resolution by 15\%}
       \resumeItemListEnd
       
 % --------Multiple Positions Heading------------
@@ -129,13 +137,13 @@ Results-driven Software Engineer with a product-focused mindset and robust exper
     {Software Engineer Intern}{July 2023 -- July 2024}
     \resumeItemListStart
        \resumeItem{Campaign Management Dashboard}
-         {Developed an intuitive campaign management dashboard, streamlining manager workflows and improving operational efficiency}
+         {Built a campaign management dashboard adopted by all managers company-wide, with top satisfaction scores in post-launch survey}
        \resumeItem{Performance Optimization}
-         {Optimized mission-critical page performance, reducing load time from unresponsive to 100 milliseconds}
+         {Reduced mission-critical page load time from unresponsive to 100ms}
        \resumeItem{Build System Migration}
-         {Spearheaded migration from Webpack to Rspack, achieving a 10x improvement in build times, resulting in significant improvement of product shipping pipeline}
+         {Migrated Webpack to Rspack, achieving 10x faster builds and accelerating the entire shipping pipeline}
        \resumeItem{Design System Upgrade}
-         {Led major design system upgrade, coordinating systematic migration of breaking changes across multiple applications and teams}
+         {Led design system major version upgrade across 21 apps and 4 teams in a monorepo, coordinating breaking changes with zero downtime}
     \resumeItemListEnd
 
 %-------------------------------------------
@@ -143,8 +151,8 @@ Results-driven Software Engineer with a product-focused mindset and robust exper
       {Binance}{Taipei, Taiwan}
       {Software Engineer Intern}{Jan 2024 -- Mar 2024}
       \resumeItemListStart
-        \resumeItem{SQL Analysis}
-          {Implemented a SQL analysis dashboard, enabling users to improve their SQL performance by providing advanced insights.}
+        \resumeItem{SQL Analysis Dashboard}
+          {Built an internal SQL analysis dashboard providing query performance insights for engineering teams}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -152,11 +160,11 @@ Results-driven Software Engineer with a product-focused mindset and robust exper
       {Software Engineer}{June 2022 -- June 2023}
       \resumeItemListStart
         \resumeItem{WebGL Animation System}
-          {Refactored gift animation system with WebGL, reducing CPU usage by 30\% and enhancing streaming performance}
+          {Rewrote gift animation system in WebGL, cutting CPU usage by 30\% during live streams}
         \resumeItem{Data Fetching Architecture}
-          {Re-architected data fetching, cutting API calls by 50\% and improving page load speed}
+          {Re-architected data fetching layer, reducing API calls by 50\% and improving page load speed}
         \resumeItem{End-to-End Testing}
-          {Implemented end-to-end testing with Playwright across three products, ensuring deployment reliability and reducing production issues}
+          {Implemented Playwright E2E testing across 3 products, reducing production incidents}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -165,12 +173,12 @@ Results-driven Software Engineer with a product-focused mindset and robust exper
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
+    \resumeSubItem{DemoDone (demodone.app)}
+      {Built an AI-powered SaaS that converts screen recordings into professional demo videos with auto-generated scripts, AI voiceover (50+ voices), and animated captions — full product from landing page to payment}
     \resumeSubItem{NPTU Past Exam}
       {Built a campus-wide past exam library webapp serving 400 daily active users}
     \resumeSubItem{cvsite.cc}
       {Developed a web app that transforms traditional CVs into visually appealing websites}
-    \resumeSubItem{Alpha Point Tracker}
-      {Developed a webapp that utilizes bscscan api to help users track their progress in the Binance alpha points event}
   \resumeSubHeadingListEnd
 
 %
@@ -183,7 +191,12 @@ Results-driven Software Engineer with a product-focused mindset and robust exper
  \resumeSubHeadingListEnd
  \resumeSubHeadingListStart
    \item{
-     \textbf{Technologies}{: GCP, AWS, ReactJS, NextJS, Tailwind CSS, NodeJS, CICD, FastAPI, GIT, Docker, Monorepo}
+     \textbf{Technologies}{: React, Next.js, Node.js, Tailwind CSS, FastAPI, NX, Rspack, pnpm, Docker, Playwright, WebGL, GIT, CI/CD, Monorepo}
+   }
+ \resumeSubHeadingListEnd
+ \resumeSubHeadingListStart
+   \item{
+     \textbf{Cloud \& Services}{: GCP, AWS, Stripe API, OpenAI API, Claude API, Gemini API, LogRocket, BetterStack}
    }
  \resumeSubHeadingListEnd
 
